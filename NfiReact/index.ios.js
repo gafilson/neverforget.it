@@ -2,9 +2,7 @@
 
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
-import { NfiReact } from './components/NfiReact.js'
-
-console.log('what is di?')
+import * as NfiApp from './core/NfiApp.js'
 
 export default class IosNfiReact extends Component {
 
@@ -13,7 +11,7 @@ export default class IosNfiReact extends Component {
     console.log("At a spot I like")
 
     return (
-      <NfiReact/>
+      <NfiApp.MainComponent/>
     );
   }
 }
