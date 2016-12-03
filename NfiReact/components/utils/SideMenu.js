@@ -16,15 +16,14 @@ export class SideMenu extends Component {
     }
   }
 
-  componentWillReceiveProps (props) {
+  componentWillReceiveProps(props) {
 
     const windowDimensions = Dimensions.get('window')
 
-    this._menuWidth = props.showMenu ? windowDimensions.width * 0.85 : 0
-    this._menuStyle = props.sideMenuStyle
+    this._menuWidth = windowDimensions.width * 0.85
 
     Animated.timing(this.state.menuAnimation, {
-      toValue: this._menuWidth,
+      toValue: props.showMenu ? windowDimensions.width * 0.85 : 0,
       duration: 250,
       easing: Easing.inout }
     ).start()
@@ -38,9 +37,11 @@ export class SideMenu extends Component {
 
     return (
         <View style={{flex: 1}}>
-          <View style={[{backgroundColor: '#EEE', position: 'absolute',height, width: this._menuWidth}, this._menuStyle]}>
-            { menuComponent }
-          </View>
+          <Animated.View style={{flex: 1, position: 'absolute'}}>
+            <View style={[{height, width: this._menuWidth}]}>
+              { menuComponent }
+            </View>
+          </Animated.View>
           <Animated.View style={[ {flex: 1, width}, { left: this.state.menuAnimation} ]} >
             { this.props.children }
           </Animated.View>
