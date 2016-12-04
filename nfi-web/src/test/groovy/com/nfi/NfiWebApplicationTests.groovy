@@ -1,18 +1,16 @@
-package com.nfi;
+package com.nfi
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.junit4.SpringRunner
 
-@RunWith(SpringRunner.class)
+@RunWith(SpringRunner)
 @SpringBootTest
-public class NfiWebApplicationTests {
+class NfiWebApplicationTests {
 
 	@Test
-	public void contextLoads() {
-		assertThat(true).isTrue();
+	void contextLoads() {
 	}
 
 }

@@ -1,11 +1,9 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
+		springBootVersion = '1.4.2.RELEASE'
 	}
 	repositories {
 		mavenCentral()
-		maven { url "https://repo.spring.io/snapshot" }
-		maven { url "https://repo.spring.io/milestone" }
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -13,12 +11,11 @@ buildscript {
 }
 
 apply plugin: 'groovy'
-//apply plugin: 'eclipse'
-apply plugin: 'idea'
+apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
 jar {
-	baseName = 'com.nfi-web'
+	baseName = 'nfi-web'
 	version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -26,41 +23,22 @@ targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
-	maven { url "https://repo.spring.io/snapshot" }
-	maven { url "https://repo.spring.io/milestone" }
-	maven { url "http://central.maven.org/maven2/" }
 }
 
 
 dependencies {
-	compile('org.codehaus.groovy:groovy-all:2.4.7')
-	compile('org.springframework.boot:spring-boot-starter-actuator')
-	compile('org.springframework.boot:spring-boot-actuator-docs')
+  compile('org.springframework:springloaded')
+  compile('org.springframework.boot:spring-boot-actuator-docs')
+  compile('org.springframework.boot:spring-boot-starter-actuator')
+  compile('org.springframework.boot:spring-boot-devtools')
 	compile('org.springframework.boot:spring-boot-starter-cache')
-	// compile('org.springframework.cloud:spring-cloud-starter-aws')
-	// compile('org.springframework.cloud:spring-cloud-starter-aws-jdbc')
-	compile('org.springframework.cloud:spring-cloud-starter-aws-messaging')
-	compile('org.springframework.cloud:spring-cloud-starter-oauth2')
-	// compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('org.springframework.boot:spring-boot-starter-data-rest')
-	// compile('org.springframework.boot.experimental:spring-boot-starter-web-reactive')
-	// compile('org.springframework.boot:spring-boot-starter-groovy-templates')
-	// compile('org.springframework.boot:spring-boot-starter-remote-shell')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+  compile("org.springframework.boot:spring-boot-starter-data-rest")
+	compile('org.springframework.boot:spring-boot-starter-remote-shell')
 	compile('org.springframework.boot:spring-boot-starter-security')
-	// compile('org.springframework.session:spring-session')
-	// compile('org.springframework.boot:spring-boot-starter-social-facebook')
-	// compile('org.springframework.boot:spring-boot-starter-social-twitter')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.boot:spring-boot-starter-websocket')
-	runtime('org.springframework.boot:spring-boot-devtools')
-	compileOnly('org.springframework.boot:spring-boot-configuration-processor')
+	compile('org.codehaus.groovy:groovy')
+	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-
-}
-
-dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.BUILD-SNAPSHOT"
-		mavenBom "org.springframework.boot.experimental:spring-boot-dependencies-web-reactive:0.1.0.BUILD-SNAPSHOT"
-	}
+	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
 }

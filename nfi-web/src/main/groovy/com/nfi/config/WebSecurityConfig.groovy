@@ -1,4 +1,4 @@
-package com.nfi.com.nfi.config;
+package com.nfi.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -13,15 +13,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http
-        .authorizeRequests()
-          .antMatchers("/", "/home").permitAll();
+
+    http.authorizeRequests()
+        .antMatchers("/**").permitAll()
+        // .antMatchers("/test/**").permitAll()
+        // .antMatchers("/testEntities/**").permitAll()
+        // .antMatchers("/").permitAll()
+        // .antMatchers("/**").denyAll()
   }
 
   @Autowired
   public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
     auth
         .inMemoryAuthentication()
-        .withUser("user").password("password").roles("USER");
+        .withUser("user").password("password").roles("USER")
   }
 }
