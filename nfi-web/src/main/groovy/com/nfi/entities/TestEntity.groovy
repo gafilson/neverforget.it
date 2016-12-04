@@ -14,10 +14,5 @@ public class TestEntity {
 
   String firstName;
   String lastName;
-
-  public TestEntity(String firstName, String lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-
+  
 }
