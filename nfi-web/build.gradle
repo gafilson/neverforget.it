@@ -37,6 +37,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-remote-shell')
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
+  compile('org.jsondoc:spring-boot-starter-jsondoc:1.2.16')
+  compile('org.jsondoc:jsondoc-ui-webjar:1.2.16')
 	compile('org.codehaus.groovy:groovy')
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
