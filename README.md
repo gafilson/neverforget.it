@@ -85,3 +85,5 @@ Starting a Gradle Daemon (subsequent builds will be faster)
 2016-12-04 09:32:06.555  INFO 21875 --- [  restartedMain] com.nfi.NfiWebApplication                : Started NfiWebApplication in 5.992 seconds (JVM running for 6.526)
 > Building 83% > :bootRun
 ```
+#### Check out the API we've created
+Navigate to http://localhost:8080/swagger-ui.html#/ and poke around the currently exported REST APIs.
