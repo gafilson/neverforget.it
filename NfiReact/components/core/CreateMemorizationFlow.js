@@ -66,13 +66,15 @@ export class CreateMemorizationFlow extends Component {
             <Image style={{width: 375 - 48, height: 200}} source={require('../../assets/placeholder.png')}/>
             <ScrollView scrollEnabled={true} horizontal={true} style={{maxHeight: 96, paddingTop: 6, paddingBottom: 6, flexDirection: 'row'}}>
               <TouchableOpacity onPress={(element) => this.touchedImage(element)}>
-                <Image id={1} style={{maxWidth: 72, maxHeight: 72, marginRight: 2}} source={require('../../assets/camera_roll/20161102_082128.jpg')}/>
+                {/*<Image id={1} style={{maxWidth: 72, maxHeight: 72, marginRight: 2}} source={require('../../assets/camera_roll/20161102_082128.jpg')}/>*/}
               </TouchableOpacity>
+              {/*
               <Image style={{maxWidth: 72, maxHeight: 72, marginRight: 2}} source={require('../../assets/camera_roll/20161102_082151.jpg')}/>
               <Image style={{maxWidth: 72, maxHeight: 72, marginRight: 2}} source={require('../../assets/camera_roll/20161102_082128.jpg')}/>
               <Image style={{maxWidth: 72, maxHeight: 72, marginRight: 2}} source={require('../../assets/camera_roll/20161102_082128.jpg')}/>
               <Image style={{maxWidth: 72, maxHeight: 72, marginRight: 2}} source={require('../../assets/camera_roll/20161102_082151.jpg')}/>
               <Image style={{maxWidth: 72, maxHeight: 72, marginRight: 2}} source={require('../../assets/camera_roll/20161102_082128.jpg')}/>
+              */}
             </ScrollView>
           </View>
           <Text>teh flowz are here</Text>
